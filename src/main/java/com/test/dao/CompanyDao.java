@@ -14,9 +14,6 @@ import java.util.List;
  */
 public interface CompanyDao extends JpaRepository <Company, Integer> {
 
-//
-//    @Query("select i from Ingredient i left join fetch i.measuringSystems where i.id =:id")
-//    Ingredient findIngredientWithMeasuringSystem(@Param("id") int id);
 
 //
 //@Query("select  distinct d from  ChildCompany  d left  join  fetch d.company")

@@ -13,8 +13,6 @@ import java.util.List;
 public interface ChildCompanyDao extends JpaRepository <ChildCompany, Integer> {
 
 
-//    @Query("select distinct d from Drink d left join fetch d.ingredients")
-//    List<Drink> drinkWithIngredients();
 //    @Query("select  distinct d from  ChildCompany  d left  join  fetch d.company")
 //    List<ChildCompany> childCompanuWithCompany();
 
