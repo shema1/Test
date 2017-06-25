@@ -45,7 +45,8 @@ public class ChildCompanyServiceImpl implements ChildCompanyService{
 
     @Override
     public void update(ChildCompany childCompany) {
-childCompanyDao.save(childCompany);
+
+        childCompanyDao.save(childCompany);
     }
 
     @Override

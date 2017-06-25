@@ -38,12 +38,14 @@ public class ChildCompanyController {
         model.addAttribute("company",companyService.findAll());
         model.addAttribute("companyChild", childCompanyService.findAll());
         model.addAttribute("addChildCompany", new ChildCompany() );
-        return "addChildCompany";
+        return "views-childCompany-addChildCompany";
     }
 
     @PostMapping("/addChildCompany")
     public String addChildCompany(@ModelAttribute ChildCompany childCompany){
        childCompanyService.save(childCompany);
+
+
         return "redirect:/addChildCompany";
     }
 

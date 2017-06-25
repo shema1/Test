@@ -11,8 +11,8 @@
     <title>Title</title>
 </head>
 <body>
-HI
-<a href="/addCompany">addCompany</a>
-<a href="/addChildCompany">addCompany</a>
-</body>
+HI WELCOME IN MY SITE
+<%--<a href="/addCompany">addCompany</a>--%>
+<%--<a href="/addChildCompany">addChildCompany</a>--%>
+<%--</body>--%>
 </html>

@@ -8,8 +8,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<link rel="stylesheet" href="/css/addChildCompany.css">
 
-<form:form modelAttribute="addChildCompany" method="post" >
+<form:form cssStyle="margin-top: 2%" modelAttribute="addChildCompany" method="post" >
 <form:input path="childName"/>
 <form:input path="childValue"/>
 <form:select path="company" items="${company}" itemLabel="name" itemValue="id" />
@@ -34,8 +35,11 @@
 
 
 <%--</form:form>--%>
-
-
+<ol>
+<c:forEach var="sl" items="${companyChild}">
+    <li>${sl.childName} <a href="/deleteChildCompany/${sl.id}">del</a></li>
+</c:forEach>
+</ol>
 
 
 <%--<ol>--%>
@@ -47,13 +51,13 @@
 <%--</c:forEach>--%>
 <%--</ol>--%>
 
-<ol>
-    <c:forEach var="b" items="${companyChild}">
-        <li>${b.company}</li>
-        <%--<c:forEach var="i" items="${b.company.}"></c:forEach>--%>
+<%--<ol>--%>
+    <%--<c:forEach var="b" items="${companyChild}">--%>
+        <%--<li>${b.company}</li>--%>
+        <%--&lt;%&ndash;<c:forEach var="i" items="${b.company.}"></c:forEach>&ndash;%&gt;--%>
 
-    </c:forEach>
-</ol>
+    <%--</c:forEach>--%>
+<%--</ol>--%>
 
 
 
