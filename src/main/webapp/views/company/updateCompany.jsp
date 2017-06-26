@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" href="/css/addCompany.css">
 <form:form modelAttribute="curentCompany" action="/updateCompany/${curentCompany.id}"  method="post"  >
-    <form:input path="name" value="${curentCompany.name}"></form:input>
 
+    <form:input path="name" value="${curentCompany.name}"></form:input>
     <button>update</button>
 </form:form>

@@ -13,7 +13,9 @@ public class ChildCompany {
     private int id;
     private String childName;
     private int childValue;
+
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn (name = "company_id")
     private Company company;
 
     public ChildCompany(){

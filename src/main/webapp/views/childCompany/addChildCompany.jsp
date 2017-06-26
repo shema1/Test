@@ -38,6 +38,7 @@
 <ol>
 <c:forEach var="sl" items="${companyChild}">
     <li>${sl.childName} <a href="/deleteChildCompany/${sl.id}">del</a></li>
+   <li><a href="/updateChildCompany/${sl.id}"> update </a></li>
 </c:forEach>
 </ol>
 

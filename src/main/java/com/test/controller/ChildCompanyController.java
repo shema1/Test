@@ -54,4 +54,22 @@ public class ChildCompanyController {
         childCompanyService.delete(id);
         return "redirect:/addChildCompany";
     }
+
+    @GetMapping("/updateChildCompany/{id}")
+    public String update(@PathVariable int id, Model model){
+
+        ChildCompany childCompany = childCompanyService.findOne(id);
+        model.addAttribute("childCompany", childCompany);
+
+
+        return "views-childCompany-updateChildCompany";
+    }
+
+    @PostMapping("/updateChildCompany/{id}")
+    public String updateCompany(@RequestParam String childName, @PathVariable int id) {
+     ChildCompany childCompany = childCompanyService.findOne(id);
+        childCompany.setChildName(childName);
+        childCompanyService.update(childCompany);
+        return "redirect:/addChildCompany";
+    }
 }

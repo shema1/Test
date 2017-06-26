@@ -5,6 +5,7 @@ import com.test.service.ChildCompanyService;
 import com.test.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +21,7 @@ public class CompanyController {
     private ChildCompanyService childCompanyService;
 
     @GetMapping("/addCompany")
+    @Transactional
     public String company(Model model){
         // model.addAttribute("Company", companyService.companyWithChildCompany());
          model.addAttribute("Company", companyService.findAll());

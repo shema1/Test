@@ -23,9 +23,9 @@
 <ol>
     <q:forEach var="com" items="${Company}">
         <li>${com.name}, ${com.value}
-            <%--<c:forEach var="a" items="${com.companies}">--%>
-                <%--${a.company.name}--%>
-            <%--</c:forEach>--%>
+            <c:forEach var="a" items="${com.companies}">
+                ${a.company.name}
+            </c:forEach>
                  <a href="/deleteCompany/${com.id}"> delete </a>
             <a href="/updateCompany/${com.id}"> update </a>
         </li>
