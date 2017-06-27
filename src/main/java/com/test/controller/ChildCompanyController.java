@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import org.springframework.web.bind.WebDataBinder;
 
+import java.util.ArrayList;
 
 
 
@@ -36,7 +37,7 @@ public class ChildCompanyController {
     @GetMapping("/addChildCompany")
     public String childCompany(Model model){
         model.addAttribute("company",companyService.findAll());
-        model.addAttribute("companyChild", childCompanyService.findAll());
+        model.addAttribute("companyChild", childCompanyService.listCom());
         model.addAttribute("addChildCompany", new ChildCompany() );
         return "views-childCompany-addChildCompany";
     }
@@ -44,7 +45,6 @@ public class ChildCompanyController {
     @PostMapping("/addChildCompany")
     public String addChildCompany(@ModelAttribute ChildCompany childCompany){
        childCompanyService.save(childCompany);
-
 
         return "redirect:/addChildCompany";
     }
@@ -60,15 +60,16 @@ public class ChildCompanyController {
 
         ChildCompany childCompany = childCompanyService.findOne(id);
         model.addAttribute("childCompany", childCompany);
-
-
         return "views-childCompany-updateChildCompany";
     }
 
     @PostMapping("/updateChildCompany/{id}")
-    public String updateCompany(@RequestParam String childName, @PathVariable int id) {
+    public String updateCompany(@RequestParam String childName,
+                                @RequestParam int childValue,
+                                @PathVariable int id) {
      ChildCompany childCompany = childCompanyService.findOne(id);
         childCompany.setChildName(childName);
+        childCompany.setChildValue(childValue);
         childCompanyService.update(childCompany);
         return "redirect:/addChildCompany";
     }

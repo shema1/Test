@@ -1,3 +1,4 @@
+<%@ taglib prefix="q" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Mykola
@@ -6,13 +7,18 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-HI WELCOME IN MY SITE
-<%--<a href="/addCompany">addCompany</a>--%>
-<%--<a href="/addChildCompany">addChildCompany</a>--%>
-<%--</body>--%>
-</html>
+
+<link rel="stylesheet" href="/css/all.css">
+<body class="proba">
+<ol>
+    <q:forEach var="com" items="${Company}">
+        <li>${com.name} , ${com.value}<a href="/updateCurentBalance/${com.id}">  update balance</a>
+            <q:forEach var="a" items="${com.companies}">
+                <ul id="fix"> -${a.childName}, ${a.childValue}$</ul>
+            </q:forEach>
+
+        </li>
+
+    </q:forEach>
+</ol>
+</body>

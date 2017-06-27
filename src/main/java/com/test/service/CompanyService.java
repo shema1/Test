@@ -18,9 +18,7 @@ public interface CompanyService {
     Company findOne(int id);
     void delete(int id);
     void update(Company company);
-  // List<ChildCompany> companyWithChildCompany();
-  Company companyWithChildCompany();
-   // Company companyWithChildCompany( int id);
-
-
+    List<Company> companyWithChildCompany();
+    void updateValue (Company company);
+    Company test(int id);
 }

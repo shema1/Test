@@ -17,7 +17,7 @@ public class Company {
 
     private String name;
     private int value;
-    @OneToMany(mappedBy = "company", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "company", cascade = CascadeType.REMOVE)
     private List<ChildCompany> companies = new ArrayList<ChildCompany>();
 
 

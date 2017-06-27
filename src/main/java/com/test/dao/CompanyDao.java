@@ -15,12 +15,12 @@ import java.util.List;
 public interface CompanyDao extends JpaRepository <Company, Integer> {
 
 
-//
-//@Query("select  distinct d from  ChildCompany  d left  join  fetch d.company")
-//List<ChildCompany> companyWithChildCompany();
-//
+    @Query("select distinct childCompany from Company childCompany left  join fetch childCompany.companies ")
+   List<Company> companyWithChildCompany();
 
-//
-    @Query("select  d from Company d left  join fetch d.companies ")
-   Company companyWithChildCompany();
+
+    @Query("SELECT  distinct  c from  Company  c left  join  fetch  c.companies where c.id=:id")
+    Company test(@Param("id") int id);
+
+
 }

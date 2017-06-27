@@ -1,12 +1,13 @@
 package com.test.serviceImpl;
 
 import com.test.dao.ChildCompanyDao;
+import com.test.dao.CompanyDao;
 import com.test.entity.ChildCompany;
+import com.test.entity.Company;
 import com.test.service.ChildCompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,10 +20,15 @@ public class ChildCompanyServiceImpl implements ChildCompanyService{
     @Autowired
     private  ChildCompanyDao childCompanyDao;
 
+    @Autowired
+    private CompanyDao companyDao;
+
     @Override
     public void save(ChildCompany childCompany) {
 
+
         childCompanyDao.save(childCompany);
+
     }
 
 
@@ -45,24 +51,15 @@ public class ChildCompanyServiceImpl implements ChildCompanyService{
 
     @Override
     public void update(ChildCompany childCompany) {
+ childCompanyDao.save(childCompany);
 
-        childCompanyDao.save(childCompany);
-    }
+        }
+
 
     @Override
-    public void test() {
-//
+    public List<Company> listCom() {
+        return childCompanyDao.listCom();
     }
-
-//    @Override
-//    public List<ChildCompany> childCompanuWithCompany() {
-//        return childCompanyDao.childCompanuWithCompany();
-//    }
-
-//    @Override
-//    public List<ChildCompany> companyWithChildCompany() {
-//        return childCompanyDao.companyWithChildCompany();
-//    }
 }
 
 

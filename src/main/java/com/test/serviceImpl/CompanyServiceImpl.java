@@ -21,15 +21,9 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Override
     public void save(Company company) {
-        int a;
-        int b = company.getValue();
+
+        companyDao.save(company);
 //
-//        for (int i = 0; i > company.getCompanies().size(); i++) {
-//            a=company.getCompanies().get(i).getChildValue();
-//            b=b+a;
-//            company.setValue(b);
-//      companyDao.save(company);
-//        }
 
 
     }
@@ -63,19 +57,27 @@ public class CompanyServiceImpl implements CompanyService {
 //        }
     }
 
-//    @Override
-//    public List<ChildCompany> companyWithChildCompany() {
-//        return (List<ChildCompany>) companyDao.companyWithChildCompany();
-//    }
-
     @Override
-    public Company companyWithChildCompany() {
+    public List<Company> companyWithChildCompany() {
         return companyDao.companyWithChildCompany();
     }
 
-//
-//    @Override
-//    public Company companyWithChildCompany(int id) {
-//        return companyDao.companyWithChildCompany(id);
-//    }
+    @Override
+    public void updateValue(Company company) {
+
+        companyDao.saveAndFlush(company);
+//        int a;
+//        int b = company.getValue();
+//        for(int i =0; i>company.getCompanies().size(); i++){
+//            a=company.getCompanies().get(i).getChildValue();
+//            b=b+a;
+//            company.setValue(b);
+//            companyDao.save(company);
+//        }
+    }
+
+    @Override
+    public Company test(int id) {
+        return companyDao.test(id);
+    }
 }

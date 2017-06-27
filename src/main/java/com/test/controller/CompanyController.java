@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import java.util.ArrayList;
 
 /**
  * Created by Mykola on 22.06.2017.
@@ -24,7 +25,7 @@ public class CompanyController {
     @Transactional
     public String company(Model model){
         // model.addAttribute("Company", companyService.companyWithChildCompany());
-         model.addAttribute("Company", companyService.findAll());
+         model.addAttribute("Company", companyService.companyWithChildCompany());
          model.addAttribute("qa",childCompanyService.findAll());
         model.addAttribute("addCompany", new Company());
         return "views-company-addCompany";
@@ -32,7 +33,7 @@ public class CompanyController {
     @PostMapping("/addCompany")
     public String addCompany(@ModelAttribute Company company){
         companyService.save(company);
-        return "views-company-addCompany";
+        return "redirect:/addCompany";
     }
 
     @GetMapping("/deleteCompany/{id}")
@@ -56,6 +57,7 @@ public class CompanyController {
         Company company = companyService.findOne(id);
         company.setName(name);
         companyService.update(company);
+        companyService.updateValue(company);
         return "redirect:/addCompany";
     }
 

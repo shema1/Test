@@ -1,6 +1,7 @@
 package com.test.dao;
 
 import com.test.entity.ChildCompany;
+import com.test.entity.Company;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -13,14 +14,9 @@ import java.util.List;
 public interface ChildCompanyDao extends JpaRepository <ChildCompany, Integer> {
 
 
-//    @Query("select  distinct d from  ChildCompany  d left  join  fetch d.company")
-//    List<ChildCompany> childCompanuWithCompany();
 
+        @Query ("select distinct  company from ChildCompany  company left join fetch  company.company ")
+     List   <Company> listCom();
 
-
-
-
-
-//    @Query("select  distinct d from Company d left  join fetch d.companies")
-//    List<ChildCompany> companyWithChildCompany();
 }
+

@@ -1,8 +1,8 @@
 package com.test.service;
 
 import com.test.entity.ChildCompany;
+import com.test.entity.Company;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,7 +15,7 @@ public interface ChildCompanyService {
     ChildCompany findOne(int id);
     void delete(int id);
     void update(ChildCompany childCompany);
-//    List<ChildCompany> childCompanuWithCompany();
-    void test();
-  //  List<ChildCompany> companyWithChildCompany();
+
+    List   <Company> listCom();
+
 }

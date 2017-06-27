@@ -7,9 +7,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<link rel="stylesheet" href="/css/addCompany.css">
+<link rel="stylesheet" href="/css/all.css">
 <form:form modelAttribute="curentCompany" action="/updateCompany/${curentCompany.id}"  method="post"  >
-
-    <form:input path="name" value="${curentCompany.name}"></form:input>
+    <span>Company name</span><form:input   path="name" />
+    <span>value</span><form:input   path="value" />
     <button>update</button>
 </form:form>

@@ -1,0 +1,32 @@
+a{
+    color: #C0392B;
+}
+
+li{
+    font-weight: 900;
+    color: black;
+}
+
+ul{
+    font-weight: 100;
+    color: #505050;
+}
+
+input {
+    border: solid #C0392B;
+    border-radius: 2%;
+    background: #bababa;
+}
+span{
+    color: #C0392B;
+    font-weight: 600;
+}
+select{
+    border: solid #C0392B;
+    background: #bababa;
+
+}
+button{
+    border: solid #C0392B;
+   background: cornflowerblue;
+}
