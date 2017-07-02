@@ -29,11 +29,11 @@ public class IndexController {
     @GetMapping("/updateCurentBalance/{id}")
     public String updateBalance(@PathVariable int id) {
         Company company = companyService.test(id);
-         int current = 0;
+        int current = 0;
         for (ChildCompany id2 : company.getCompanies()){
         int counter = id2.getChildValue() ;
         current += counter;
-        company.setValue(current);
+        company.setAllIncome(current+company.getValue());
         companyService.save(company);
         }
 

@@ -17,6 +17,7 @@ public class Company {
 
     private String name;
     private int value;
+    private int allIncome;
     @OneToMany(mappedBy = "company", cascade = CascadeType.REMOVE)
     private List<ChildCompany> companies = new ArrayList<ChildCompany>();
 
@@ -24,6 +25,14 @@ public class Company {
           public Company(){
 
           }
+
+    public int getAllIncome() {
+        return allIncome;
+    }
+
+    public void setAllIncome(int allIncome) {
+        this.allIncome = allIncome;
+    }
 
     public int getId() {
         return id;
